@@ -230,3 +230,8 @@ jobs:
         if: ${{ matrix.platform == 'android' && (inputs.platform == 'android' || inputs.platform == 'both') }}
         run: |
           ./scripts/build-multiarch-apk.sh
+      - name: Upload Android APK
+        if: ${{ matrix.platform == 'android' && (inputs.platform == 'android' || inputs.platform == 'both') }}
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          path: /home/runner/work/gfxbench/gfxbench/archive/gfxbench-5.1.5+corporate.apk
