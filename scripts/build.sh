@@ -13,7 +13,7 @@ export WORKSPACE
 OVERRIDE_OSX_ARCHS=${OSX_ARCHS}
 OSX_ARCHS=${OVERRIDE_OSX_ARCHS:="x86_64"} # x86_64,arm64
 
-APPLICATION_TYPE=gui 
+
 OVERRIDE_CONFIG=${CONFIG}
 OVERRIDE_PLATFORM=${PLATFORM}
 OVERRIDE_BUNDLE_DATA=${BUNDLE_DATA}
@@ -99,7 +99,7 @@ export MP_COMPILE
 
 # INTERNAL USE FOR KISHONTI: Full UI application or command line test runner
 # (gui / developer)
-: ${APPLICATION_TYPE:="developer"}
+: ${APPLICATION_TYPE:="gui"}
 export APPLICATION_TYPE
 if [ "$APPLICATION_TYPE" != "gui" ] && [ "$APPLICATION_TYPE" != "developer" ]; then
     echo "APPLICATION_TYPE must be set 'gui' or 'developer'"
